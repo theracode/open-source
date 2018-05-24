@@ -1,0 +1,23 @@
+
+th-engineering-page .grid {
+  --background-image-url: url('/assets/images/engineering-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+
+th-engineering-body-content {
+  grid-column: 2 / 8;
+}
+
+th-engineering-summary {
+  grid-column: 1 / 9;
+}
+
+th-engineering-page .btn-container {
+  padding-top: 20px;
+}

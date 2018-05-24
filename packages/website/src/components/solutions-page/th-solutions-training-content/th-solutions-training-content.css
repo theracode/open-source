@@ -1,0 +1,50 @@
+
+th-solutions-training-content .container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  font-family: var(--font);
+  padding: 50px 0px 50px 0px;
+  background: linear-gradient(to right,#3a3a95 0,#5e5ef6 100%);
+  color: #FFF;
+}
+
+th-solutions-training-content .content {
+  grid-column: 5 / 8;
+}
+
+th-solutions-training-content h1 {
+  margin: 0px;
+  font-size: 32px;
+  color: #FFF;
+  font-weight: 500;
+  letter-spacing: -0.84px;
+}
+
+th-solutions-training-content .subheader {
+  font-size: 18px;
+  font-weight: 500;
+  color: #DDD;
+  line-height: 1.428571429;
+}
+
+th-solutions-training-content .img {
+  grid-column: 1/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th-solutions-training-content img {
+  height: 200px;
+}
+
+@media all and (max-width: 960px) {
+  th-solutions-training-content .img {
+    display: none;
+  }
+
+  th-solutions-training-content .content {
+    grid-column: 2 / 8;
+  }
+}

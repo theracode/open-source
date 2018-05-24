@@ -1,0 +1,21 @@
+
+
+
+th-about-page .grid {
+  --background-image-url: url('/assets/images/about-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+
+th-about-body-content {
+  grid-column: 2 / 8;
+}
+
+th-about-mission {
+  grid-column: 1 / 9;
+}

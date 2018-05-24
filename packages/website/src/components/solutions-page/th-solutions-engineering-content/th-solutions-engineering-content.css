@@ -1,0 +1,50 @@
+
+th-solutions-engineering-content .container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  font-family: var(--font);
+  padding: 50px 0px 50px 0px;
+  background: linear-gradient(to right,#c03f54 0,#db4860 100%);
+  color: #FFF;
+}
+
+th-solutions-engineering-content .content {
+  grid-column: 2 / 5;
+}
+
+th-solutions-engineering-content h1 {
+  margin: 0px;
+  font-size: 32px;
+  color: #FFF;
+  font-weight: 500;
+  letter-spacing: -0.84px;
+}
+
+th-solutions-engineering-content .subheader {
+  font-size: 18px;
+  font-weight: 500;
+  color: #DDD;
+  line-height: 1.428571429;
+}
+
+th-solutions-engineering-content .img {
+  grid-column: 5/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+th-solutions-engineering-content img {
+  height: 200px;
+}
+
+@media all and (max-width: 960px) {
+  th-solutions-engineering-content .img {
+    display: none;
+  }
+
+  th-solutions-engineering-content .content {
+    grid-column: 2 / 8;
+  }
+}

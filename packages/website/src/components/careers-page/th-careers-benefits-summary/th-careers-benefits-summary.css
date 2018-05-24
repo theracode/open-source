@@ -1,0 +1,47 @@
+
+th-careers-benefits-summary .container {
+  box-sizing: border-box;
+  padding: 75px 0px 75px 0px;
+  background: linear-gradient(to right,#3a3a95 0,#5e5ef6 100%);
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  font-family: var(--font);
+  color: #FFF;
+}
+
+th-careers-benefits-summary h1 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0px;
+}
+
+th-careers-benefits-summary .content {
+  grid-column:  2 / 6;
+  margin-right: 20px;
+}
+
+th-careers-benefits-summary .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+th-careers-benefits-summary p {
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: -.02em;
+}
+
+@media all and (max-width: 960px) {
+
+  th-careers-benefits-summary .content {
+    grid-column:  1 / 9;
+    margin: 50px 50px 0px 50px;
+  }
+
+  th-careers-benefits-summary .container {
+    padding: 50px 0px 50px 0px;
+  }
+
+}

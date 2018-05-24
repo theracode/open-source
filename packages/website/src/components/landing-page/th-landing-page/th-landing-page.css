@@ -1,0 +1,46 @@
+th-landing-page .grid {
+  --background-image-url: url('/assets/images/landing-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-landing-team, th-footer {
+  grid-column: 1 / 9;
+}
+th-landing-what-we-do {
+  grid-column: 2 / 8;
+}
+
+
+th-landing-good-hands {
+  grid-column: 2 / 8;
+}
+
+th-landing-architecture-process {
+  grid-column: 2 / 4;
+}
+
+
+th-landing-training-process {
+  grid-column: 4 / 6;
+}
+
+th-landing-engineering-process {
+  grid-column: 6 / 8;
+}
+
+@media all and (max-width: 1080px) {
+  th-landing-architecture-process,
+  th-landing-training-process,
+  th-landing-engineering-process {
+    grid-column: 2 / 8;
+  }
+}
+
+@media all and (max-width: 600px) {
+  th-landing-architecture-process,
+  th-landing-training-process,
+  th-landing-engineering-process {
+    grid-column: 1 / 9;
+  }
+}

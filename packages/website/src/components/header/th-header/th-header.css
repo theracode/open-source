@@ -1,0 +1,56 @@
+th-header .grid {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  height: 700px;
+  background-image: var(--background-image-url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+th-header th-nav {
+  grid-column: 1 / 9;
+}
+
+th-header .header-text {
+  grid-column: 2 / 8;
+  display: flex;
+  font-family: var(--font);
+  flex-direction: column;
+  text-align: center;
+}
+
+th-header h1 {
+  margin: 0px;
+  font-size: 48px;
+  color: #FFF;
+  font-weight: 700;
+  letter-spacing: -.015em;
+}
+
+th-header h2 {
+  margin: 0px;
+  padding-top: 40px;
+  color: #DDD;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -.015em;
+}
+
+@media all and (max-width: 600px) {
+  th-header .header-text {
+    padding: 0px 10px 0px 10px;
+    grid-column: 1 / 9;
+  }
+
+  th-header h1 {
+    font-size: 36px;
+  }
+
+  th-header h2 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

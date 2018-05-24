@@ -1,0 +1,43 @@
+
+th-contact-body-content .container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  font-family: var(--font);
+  color: var(--nearly-black-text);
+  margin-bottom: 50px;
+}
+
+th-contact-body-content .form-input {
+  border: 1px solid #e1e5ed;
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.428571429;
+  color: #666;
+  padding: 6px 12px;
+  font-weight: 500;
+  border-radius: 4px;
+  height: 30px;
+}
+
+th-contact-body-content h2 {
+  font-size: 16px;
+  margin: 0px 0px 8px;
+}
+
+th-contact-body-content .required {
+  color: var(--red);
+}
+
+th-contact-body-content .input-group {
+  margin-bottom: 15px;
+}
+
+th-contact-body-content textarea {
+  resize: none;
+  height: 200px !important;
+}
+
+th-contact-body-content ion-button .button {
+  height: 50px !important;
+}

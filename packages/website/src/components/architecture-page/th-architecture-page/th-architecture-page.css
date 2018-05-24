@@ -1,0 +1,22 @@
+
+th-architecture-page .grid {
+  --background-image-url: url('/assets/images/architecture-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+th-architecture-body-content {
+  grid-column: 2 / 8;
+}
+
+th-architecture-summary {
+  grid-column: 1 / 9;
+}
+
+th-architecture-page .btn-container {
+  padding-top: 20px;
+}

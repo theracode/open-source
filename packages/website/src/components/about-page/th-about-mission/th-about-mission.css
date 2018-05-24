@@ -1,0 +1,51 @@
+
+th-about-mission .container {
+  box-sizing: border-box;
+  padding: 100px 0px 100px 0px;
+  background: linear-gradient(to right,#3a3a95 0,#5e5ef6 100%);
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  font-family: var(--font);
+  color: #FFF;
+}
+
+th-about-mission h1 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0px;
+}
+
+th-about-mission .mission-container {
+  grid-column:  2 / 5;
+  margin-right: 20px;
+}
+
+th-about-mission .values-container {
+  grid-column:  5 / 8;
+  margin-left: 20px;
+}
+
+th-about-mission .mission-container, .values-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+th-about-mission p {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media all and (max-width: 600px) {
+
+  th-about-mission .mission-container, th-about-mission .values-container {
+    grid-column:  1 / 9;
+    margin: 50px 50px 0px 50px;
+  }
+
+  th-about-mission .container {
+    padding: 50px 0px 50px 0px;
+  }
+
+}

@@ -1,0 +1,53 @@
+th-landing-team .container {
+  font-family: var(--font);
+  background-color: var(--medium-blue);
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  padding: 20px 0px 20px 0px;
+}
+
+th-landing-team h1 {
+  color: #FFF;
+  text-align: center;
+  letter-spacing: -.038em;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+th-landing-team h2 {
+  margin-top: 0px;
+  text-align: center;
+  color: var(--offwhite-text);
+  letter-spacing: -.03em;
+  line-height: 1.8em;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+th-landing-team .photo {
+  text-align: center;
+}
+
+th-landing-team img {
+  border-radius: 50%;
+  width: 200px;
+}
+
+th-landing-team .copy {
+  padding: 15px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.026em;
+  line-height: 1.8em;
+  color: #FFF;
+}
+
+th-landing-team .second {
+  padding-top: 25px;
+}

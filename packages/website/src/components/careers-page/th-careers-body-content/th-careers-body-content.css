@@ -1,0 +1,42 @@
+
+th-careers-body-content .container {
+  box-sizing: border-box;
+  font-family: var(--font);
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+  padding: 60px 0px 60px 0px;
+}
+
+th-careers-body-content .what-we-do {
+  margin-right: 30px;
+  grid-column: 1 / 5;
+}
+
+th-careers-body-content .what-we-look-for {
+  margin-left: 30px;
+  grid-column: 5 / 9;
+}
+
+th-careers-body-content h1 {
+  font-size: 24px;
+  color: var(--nearly-black-text);
+  line-height: 1.1;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+th-careers-body-content p {
+  color: #576070;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: -.02em;
+}
+
+@media all and (max-width: 960px) {
+
+  th-careers-body-content .what-we-do, th-careers-body-content .what-we-look-for {
+    grid-column: 1 / 9;
+    margin: 0px 0px 40px 0px;
+  }
+
+}

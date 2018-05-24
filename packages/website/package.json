@@ -1,0 +1,55 @@
+{
+  "name": "@theracode/website",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Theracode company webiste",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --prerender",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache",
+    "deploy": "firebase deploy"
+  },
+  "dependencies": {
+    "@ionic/core": "latest",
+    "@stencil/core": "latest",
+    "@stencil/router": "latest",
+    "ionicons": "latest"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "latest",
+    "@stencil/sass": "latest",
+    "@stencil/utils": "latest",
+    "@types/jest": "^22.2.2",
+    "jest": "^22.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theracode/open-source.git"
+  },
+  "author": "Theracode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil"
+  },
+  "homepage": "https://github.com/ionic-team/stencil",
+  "jest": {
+    "transform": {
+      "^.+\\.(js|ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+
+th-careers-page .grid {
+  --background-image-url: url('/assets/images/careers-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+th-careers-body-content {
+  grid-column: 2 / 8;
+}
+
+th-careers-benefits-summary {
+  grid-column: 1 / 9;
+}
+
+th-careers-open-positions {
+  grid-column: 3 / 7;
+}
+
+@media all and (max-width: 700px) {
+  th-careers-open-positions {
+    grid-column: 2 / 8;
+  }
+}

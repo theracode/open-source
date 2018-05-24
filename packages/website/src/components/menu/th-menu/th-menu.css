@@ -1,0 +1,15 @@
+th-menu .menu-container {
+  display: block;
+  padding: 10px;
+  font-family: var(--font);
+}
+
+th-menu th-route-link {
+  display: block;
+  margin: 10px 0px 10px 0px;
+}
+
+a {
+  color: var(--nearly-black-text);
+  text-decoration: none;
+}

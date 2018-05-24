@@ -1,0 +1,4 @@
+/* don't use display none, etc 'cause we want layout to happen */
+.hidden-component {
+  visibility: hidden;
+}

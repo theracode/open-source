@@ -1,0 +1,17 @@
+th-landing-good-hands .container {
+  margin: 100px 0px 100px 0px;
+}
+
+th-landing-good-hands h2 {
+  color: var(--light-grey-text);
+  font-family: var(--font);
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.4em;
+  letter-spacing: -.04em;
+  font-weight: 600;
+}
+
+th-landing-good-hands h2 strong {
+  color: var(--nearly-black-text);
+}

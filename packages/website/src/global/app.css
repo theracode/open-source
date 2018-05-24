@@ -1,0 +1,43 @@
+/* Document Level Styles */
+:root {
+  --font:  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+  --dark-blue: #333;
+  --medium-blue: #444;
+  --nearly-black-text: #161616;
+  --medium-grey-text: #787878;
+  --light-grey-text: #818893;
+  --offwhite-text: #DDD;
+  --green: #00c674;
+  --purple: #6058ff;
+  --blue: #37a8ff;
+  --red: #f3375f;
+  --orange: #ffa800;
+
+  --desktop-header-height: 101px;
+  --small-screen-header-height: 150px;
+  --header-change-to-small-screen: 960px;
+  --desktop-splash-image-height: 833px;
+  --desktop-main-container-height: calc(var(--desktop-splash-image-height) - var(--desktop-header-height));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+  cursor: pointer;
+}

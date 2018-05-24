@@ -1,0 +1,111 @@
+
+th-nav .container {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font);
+}
+
+th-nav .logo {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #FFF;
+}
+
+th-nav img {
+  height: calc(var(--small-screen-header-height) - 90px);
+  margin-right: 10px;
+}
+
+th-nav .title {
+  letter-spacing: -.039em;
+  font-size: 54px;
+  margin: 0px;
+}
+
+
+th-nav nav {
+  margin-left: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 0px 50px;
+  width: 100%;
+}
+
+th-nav a, th-nav th-route-link {
+  text-decoration: none;
+}
+
+th-nav nav a, th-nav nav th-route-link {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  color: #FFF;
+}
+
+th-nav nav a:hover, th-nav nav th-route-link:hover {
+  text-decoration: underline;
+}
+
+th-nav .menu-icon {
+  display: none;
+}
+
+@media all and (max-width: 1080px) {
+  th-nav .container {
+    flex-direction: column;
+  }
+
+  th-nav nav {
+    margin: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  th-nav .container {
+    flex-direction: row;
+    align-items: flex-center;
+    margin-top: 0px;
+  }
+
+  th-nav .title {
+    font-size: 44px;
+  }
+
+  th-nav .logo {
+    flex-grow: 1;
+  }
+
+  th-nav nav {
+    display: none;
+  }
+
+  th-nav .menu-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  th-nav ion-icon {
+    fill: #FFF;
+    height: 30px;
+  }
+
+  th-nav .menu-icon button {
+    background-color: transparent !important;
+    border: 0px solid;
+    box-shadow: inherit;
+  }
+}
+
+/* this is a hack until Ionic is fixed */
+body.backdrop-no-scroll {
+  overflow: auto !important;
+}

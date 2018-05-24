@@ -1,0 +1,27 @@
+
+
+th-solutions-page .grid {
+  --background-image-url: url('/assets/images/solutions-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+th-solutions-architecture-content {
+  grid-column: 1 / 9;
+}
+
+th-solutions-training-content {
+  grid-column: 1 / 9;
+}
+
+th-solutions-engineering-content {
+  grid-column: 1 / 9;
+}
+
+th-solutions-page .btn-container {
+  padding-top: 20px;
+}

@@ -1,0 +1,15 @@
+
+th-contact-page .grid {
+  --background-image-url: url('/assets/images/contact-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+th-contact-body-content {
+  grid-column: 3 / 7;
+}
+

@@ -1,0 +1,22 @@
+
+th-training-page .grid {
+  --background-image-url: url('/assets/images/training-splash.jpg');
+  display: grid;
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+}
+
+th-header, th-footer {
+  grid-column: 1 / 9;
+}
+
+th-training-body-content {
+  grid-column: 2 / 8;
+}
+
+th-training-summary {
+  grid-column: 1 / 9;
+}
+
+th-training-page .btn-container {
+  padding-top: 20px;
+}

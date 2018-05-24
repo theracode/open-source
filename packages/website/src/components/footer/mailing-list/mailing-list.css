@@ -1,0 +1,43 @@
+mailing-list .container {
+  font-family: var(--font);
+}
+
+mailing-list h1 {
+  font-size: 24px;
+  letter-spacing: -.02em;
+  font-weight: 600;
+  color: #FFF;
+  margin: 0px;
+}
+
+mailing-list p {
+  margin: 10px 0px 15px 0px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -.016em;
+  color: var(--offwhite-text);
+}
+
+mailing-list .email-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+mailing-list ion-item {
+  flex-grow: 1;
+}
+
+mailing-list ion-item :first-child {
+  padding: 0px;
+}
+
+mailing-list ion-button :first-child {
+  height: 45px;
+  margin: 0px;
+}
+
+mailing-list .submit-text {
+  margin-top: 10px;
+  color: #FFF;
+}

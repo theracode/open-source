@@ -1,0 +1,25 @@
+
+th-about-body-content .container {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  font-family: var(--font);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+th-about-body-content h1 {
+  font-size: 32px;
+  color: var(nearly-black-text);
+  font-weight: 500;
+  letter-spacing: -0.84px;
+}
+
+th-about-body-content p {
+  color: #576070;
+  font-size: 20px;
+  line-height: 34px;
+  letter-spacing: -.02em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
