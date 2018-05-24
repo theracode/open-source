@@ -1,5 +1,3 @@
-const sass = require('@stencil/sass');
-
 exports.config = {
   outputTargets: [
     {
@@ -11,7 +9,6 @@ exports.config = {
   ],
   globalStyle: 'src/global/app.css',
   plugins: [
-    sass()
   ]
 };
 

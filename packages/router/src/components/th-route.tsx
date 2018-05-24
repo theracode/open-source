@@ -27,7 +27,7 @@ export class ThRoute {
     this.state = state;
   }
 
-  render() {
+  render(): any[] {
     return []
   }
 }

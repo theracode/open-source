@@ -75,7 +75,7 @@ export class ThRouterOutlet {
     });
   }
 
-  render() {
+  render(): any[] {
     return []
   }
 }

@@ -1,4 +1,5 @@
 import '@ionic/core';
+import '@theracode/router';
 import 'ionicons';
 
 import { Component } from '@stencil/core';

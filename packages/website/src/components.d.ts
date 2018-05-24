@@ -23,18 +23,10 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import 'ionicons';
 import '@ionic/core';
+import 'ionicons';
+import '@theracode/router';
 
-import {
-  EventEmitter,
-} from '@stencil/core';
-import {
-  RouteLinkClickEventDetail,
-} from './components/router/interfaces';
-import {
-  RouterState,
-} from './components/router/router-state';
 
 declare global {
 
@@ -1131,144 +1123,6 @@ declare global {
   }
   namespace JSXElements {
     export interface ThMenuAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface ThRouteLink {
-      'url': string;
-    }
-  }
-
-  interface HTMLThRouteLinkElement extends StencilComponents.ThRouteLink, HTMLStencilElement {}
-
-  var HTMLThRouteLinkElement: {
-    prototype: HTMLThRouteLinkElement;
-    new (): HTMLThRouteLinkElement;
-  };
-  interface HTMLElementTagNameMap {
-    'th-route-link': HTMLThRouteLinkElement;
-  }
-  interface ElementTagNameMap {
-    'th-route-link': HTMLThRouteLinkElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'th-route-link': JSXElements.ThRouteLinkAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ThRouteLinkAttributes extends HTMLAttributes {
-      'onRouteLinkClicked'?: (event: CustomEvent<RouteLinkClickEventDetail>) => void;
-      'url'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface ThRoute {
-      'component': string;
-      'getState': () => RouterState;
-      'isMatch': (newUrl: string) => boolean;
-      'setState': (state: number) => void;
-      'url': string;
-    }
-  }
-
-  interface HTMLThRouteElement extends StencilComponents.ThRoute, HTMLStencilElement {}
-
-  var HTMLThRouteElement: {
-    prototype: HTMLThRouteElement;
-    new (): HTMLThRouteElement;
-  };
-  interface HTMLElementTagNameMap {
-    'th-route': HTMLThRouteElement;
-  }
-  interface ElementTagNameMap {
-    'th-route': HTMLThRouteElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'th-route': JSXElements.ThRouteAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ThRouteAttributes extends HTMLAttributes {
-      'component'?: string;
-      'url'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface ThRouterOutlet {
-      'activateComponent': (tagName: string) => Promise<{}>;
-    }
-  }
-
-  interface HTMLThRouterOutletElement extends StencilComponents.ThRouterOutlet, HTMLStencilElement {}
-
-  var HTMLThRouterOutletElement: {
-    prototype: HTMLThRouterOutletElement;
-    new (): HTMLThRouterOutletElement;
-  };
-  interface HTMLElementTagNameMap {
-    'th-router-outlet': HTMLThRouterOutletElement;
-  }
-  interface ElementTagNameMap {
-    'th-router-outlet': HTMLThRouterOutletElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'th-router-outlet': JSXElements.ThRouterOutletAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ThRouterOutletAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface ThRouter {
-
-    }
-  }
-
-  interface HTMLThRouterElement extends StencilComponents.ThRouter, HTMLStencilElement {}
-
-  var HTMLThRouterElement: {
-    prototype: HTMLThRouterElement;
-    new (): HTMLThRouterElement;
-  };
-  interface HTMLElementTagNameMap {
-    'th-router': HTMLThRouterElement;
-  }
-  interface ElementTagNameMap {
-    'th-router': HTMLThRouterElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'th-router': JSXElements.ThRouterAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ThRouterAttributes extends HTMLAttributes {
 
     }
   }
