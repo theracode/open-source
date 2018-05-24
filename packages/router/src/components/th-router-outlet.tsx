@@ -13,10 +13,10 @@ export class ThRouterOutlet {
 
   private currentlyActive: HTMLElement = null;
   private futureActive: HTMLElement = null;
-  
+
   @Method()
   async activateComponent(tagName: string) {
-    
+
 
     if (!this.currentlyActive) {
       // okay cool, this is the first time the app is loaded, check if it was SSR'd
@@ -25,12 +25,12 @@ export class ThRouterOutlet {
         // we've got the element, so just return for now I guess
         this.currentlyActive = element;
         return new Promise((resolve) => {
-          
+
           window.scrollTo(0, 0);
-          
+
           setTimeout(() => {
             this.queue.write(() => {
-              
+
               setTimeout(() => {
                 this.queue.write(() => {
                   element.classList.remove(HIDDEN_COMPONENT);
@@ -51,7 +51,7 @@ export class ThRouterOutlet {
     }
 
     await skipTwoFrames(this.queue.read);
-    
+
     // okay, cool, we've chill out for a hot minute, we've read some frames
     // and measured ourselves up good and nice
 
@@ -71,12 +71,12 @@ export class ThRouterOutlet {
           this.futureActive = null;
           this.queue.write(resolve);
         }, 1);
-      })
+      });
     });
   }
 
   render(): any[] {
-    return []
+    return [];
   }
 }
 

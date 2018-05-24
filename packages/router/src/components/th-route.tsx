@@ -11,7 +11,7 @@ export class ThRoute {
   @Prop() url = '';
   @Prop() component = '';
   private state = RouterState.INACTIVE;
-  
+
   @Method()
   isMatch(newUrl: string) {
     return newUrl === this.url;
@@ -28,7 +28,7 @@ export class ThRoute {
   }
 
   render(): any[] {
-    return []
+    return [];
   }
 }
 

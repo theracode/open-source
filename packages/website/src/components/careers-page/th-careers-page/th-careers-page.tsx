@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -24,7 +23,7 @@ export class ThCareersPage {
 
         <th-footer></th-footer>
       </div>
-    ]
+    ];
   }
 }
 

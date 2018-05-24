@@ -3,7 +3,7 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-contact-body-content',
   styleUrl: 'th-contact-body-content.css',
-  
+
 })
 export class ThContactBodyContent {
 

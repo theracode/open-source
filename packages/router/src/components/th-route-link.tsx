@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Prop, Listen } from '@stencil/core';
+import { Component, Event, EventEmitter, Listen, Prop } from '@stencil/core';
 import { RouteLinkClickEventDetail } from './interfaces';
 
 @Component({
@@ -8,7 +8,7 @@ export class ThRouteLink {
 
   @Event() routeLinkClicked: EventEmitter<RouteLinkClickEventDetail>;
 
-  @Prop() url = "/";
+  @Prop() url = '/';
 
   @Listen('click')
   handleClick(event: Event) {
@@ -19,6 +19,6 @@ export class ThRouteLink {
   render() {
     return <a href={this.url}>
       <slot></slot>
-    </a>
+    </a>;
   }
 }

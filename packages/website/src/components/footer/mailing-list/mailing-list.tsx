@@ -3,7 +3,7 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'mailing-list',
   styleUrl: 'mailing-list.css',
-  
+
 })
 export class MailingList {
 

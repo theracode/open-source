@@ -6,7 +6,7 @@ import { RouterState } from './router-state';
 @Component({
   tag: 'th-router',
 })
-export class ThRouter{
+export class ThRouter {
 
   @Element() element: HTMLElement;
   @Prop({ context: 'queue'}) queue: QueueApi;
@@ -53,6 +53,6 @@ export class ThRouter{
     return [
       <th-router-outlet></th-router-outlet>,
       <slot></slot>
-    ]
+    ];
   }
 }

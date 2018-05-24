@@ -3,10 +3,10 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-landing-good-hands',
   styleUrl: 'th-landing-good-hands.css',
-  
+
 })
 export class ThLandingGoodHands {
-  
+
   render() {
     return [
       <div class="container">

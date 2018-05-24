@@ -3,10 +3,10 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-footer',
   styleUrl: 'th-footer.css',
-  
+
 })
 export class ThFooter {
-  
+
   render() {
     return [
       <div class="grid">

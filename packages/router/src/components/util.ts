@@ -1,7 +1,7 @@
 
 export function skipTwoFrames(readFrame: Function): Promise<void> {
   return new Promise((resolve) => {
-    
+
     readFrame(() => {
       setTimeout(() => {
         readFrame(() => {
@@ -9,7 +9,7 @@ export function skipTwoFrames(readFrame: Function): Promise<void> {
             resolve();
           }, 1);
         });
-      }, 1)
-    })
+      }, 1);
+    });
   });
 }

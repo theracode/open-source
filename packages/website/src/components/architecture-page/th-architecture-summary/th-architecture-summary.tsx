@@ -3,10 +3,10 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-architecture-summary',
   styleUrl: 'th-architecture-summary.css',
-  
+
 })
 export class ThArchitectureSummary {
-  
+
   render() {
     return [
       <div class="container">

@@ -3,10 +3,10 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-nav',
   styleUrl: 'th-nav.css',
-  
+
 })
 export class ThNav {
-  
+
   render() {
     return [
       <div class="container" main>

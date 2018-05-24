@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -19,10 +18,10 @@ export class ThAboutPage {
         <th-about-body-content></th-about-body-content>
 
         <th-about-mission></th-about-mission>
-        
+
         <th-footer></th-footer>
       </div>
-    ]
+    ];
   }
 }
 

@@ -5,7 +5,7 @@ import { Component } from '@stencil/core';
   styleUrl: 'th-footer-links.css',
 })
 export class ThFooterLinks {
-  
+
   render() {
     return [
       <div class="th-footer-links-grid">
@@ -33,7 +33,7 @@ export class ThFooterLinks {
             <li>
               <a class="th-footer-links-a" href="https://github.com/Theracode/engineering-code-of-conduct">Code of Conduct</a>
             </li>
-            
+
           </ul>
         </div>
         <div class="th-footer-links-team-container">

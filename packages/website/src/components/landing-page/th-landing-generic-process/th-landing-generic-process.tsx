@@ -9,9 +9,9 @@ export class ThLandingGenericProcess {
   @Prop() imagePath: string;
   @Prop() titleText: string;
   @Prop() bodyContent: string;
-  @Prop() buttonClass: string = '';
-  @Prop() titleClass: string = '';
-  
+  @Prop() buttonClass = '';
+  @Prop() titleClass = '';
+
   render() {
     return (
       <div class="container">
@@ -26,7 +26,7 @@ export class ThLandingGenericProcess {
           <ion-button class={this.buttonClass}>Learn More</ion-button>
         </div>
       </div>
-    )
+    );
   }
 }
 

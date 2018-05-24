@@ -3,10 +3,10 @@ import { Component } from '@stencil/core';
 @Component({
   tag: 'th-menu',
   styleUrl: 'th-menu.css',
-  
+
 })
 export class ThMenu {
-  
+
   render() {
     return [
       <div>

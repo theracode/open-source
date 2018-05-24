@@ -1,0 +1,7 @@
+
+{
+  "extends": "@theracode/tslint-rules",
+  "rules": {
+    "no-import-side-effect": false
+  }
+}

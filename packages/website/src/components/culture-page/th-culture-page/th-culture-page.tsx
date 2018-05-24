@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -20,15 +19,15 @@ export class ThCulturePage {
             </a>
           </div>
         </th-header>
-        
+
 
         <th-culture-body-content></th-culture-body-content>
 
         <th-culture-summary></th-culture-summary>
-        
+
         <th-footer></th-footer>
       </div>
-    ]
+    ];
   }
 }
 

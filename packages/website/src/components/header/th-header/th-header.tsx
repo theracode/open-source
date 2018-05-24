@@ -3,13 +3,13 @@ import { Component, Prop } from '@stencil/core';
 @Component({
   tag: 'th-header',
   styleUrl: 'th-header.css',
-  
+
 })
 export class ThHeader {
-  
-  @Prop() headerText = "";
-  @Prop() subText = "";
-  @Prop() buttonText = "";
+
+  @Prop() headerText = '';
+  @Prop() subText = '';
+  @Prop() buttonText = '';
 
 
   render() {

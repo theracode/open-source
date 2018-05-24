@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -19,7 +18,7 @@ export class ThSolutionsPage {
               <ion-button slot="button">Get in touch</ion-button>
             </a>
           </div>
-          
+
         </th-header>
 
         <th-solutions-architecture-content></th-solutions-architecture-content>
@@ -30,7 +29,7 @@ export class ThSolutionsPage {
 
         <th-footer></th-footer>
       </div>
-    ]
+    ];
   }
 }
 

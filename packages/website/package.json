@@ -14,12 +14,14 @@
     "start": "npm run dev",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "lint": "tslint --project .",
+    "lint-fix": "tslint --project . --fix"
   },
   "dependencies": {
     "@ionic/core": "latest",
     "@stencil/core": "latest",
-    "@stencil/router": "latest",
+    "@theracode/router": "latest",
     "ionicons": "latest"
   },
   "devDependencies": {
@@ -27,7 +29,9 @@
     "@stencil/sass": "latest",
     "@stencil/utils": "latest",
     "@types/jest": "^22.2.2",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "tslint": "^5.10.0",
+    "@theracode/tslint-rules": "latest"
   },
   "repository": {
     "type": "git",

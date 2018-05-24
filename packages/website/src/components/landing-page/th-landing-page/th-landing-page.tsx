@@ -1,4 +1,3 @@
-import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -14,7 +13,7 @@ export class ThLandingPage {
           headerText="Theracode helps enterprise teams build better with Ionic"
           subText="Theracode has the world's highest concentration of Ionic expertise outside of the company, and we use that depth to help our clients work through the biggest and most nuanced challenges of building Ionic apps and PWAs at scale.">
         </th-header>
-        
+
         <th-landing-what-we-do></th-landing-what-we-do>
 
         <th-landing-architecture-process></th-landing-architecture-process>
@@ -24,9 +23,9 @@ export class ThLandingPage {
         <th-landing-good-hands></th-landing-good-hands>
 
         <th-landing-team></th-landing-team>
-        
+
         <th-footer></th-footer>
       </div>
-    )
+    );
   }
 }
