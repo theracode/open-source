@@ -1,5 +1,6 @@
 th-landing-page .grid {
   --background-image-url: url('/assets/images/landing-splash.jpg');
+  --background-color: #4D4C52;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

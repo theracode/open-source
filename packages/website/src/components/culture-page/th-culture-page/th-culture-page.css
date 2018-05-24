@@ -1,6 +1,7 @@
 
 th-culture-page .grid {
   --background-image-url: url('/assets/images/culture-splash.jpg');
+  --background-color: #3A404F;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

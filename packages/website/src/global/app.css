@@ -22,6 +22,8 @@
   --red: #f3375f;
   --orange: #ffa800;
 
+  --background-color: #3A404F;
+
   --desktop-header-height: 101px;
   --small-screen-header-height: 150px;
   --header-change-to-small-screen: 960px;

@@ -16,7 +16,9 @@ export class ThAboutBodyContent {
           <p>We're is the #1 Ionic consulting company in the world because we only work with Ionic. For most consulting companies, Ionic is the occasional niche that they know a little bit about. We bleed Ionic blue, and it shows up in the quality of our work.</p>
           <p>We're different then most consulting companies because we only hire senior level engineers that have a track record in enterprise or solution architecture for fortune 500 companies. All of our engineers are Ionic experts, but they're full stack developers and able to solve problems throughout the stack. We cherry pick the best engineers available in the Ionic community, and pay them handsomely since we value quality outcomes and happy customers above all else.</p>
           <p>As far as Ionic consulting goes, Theracode is not the cheapest, but we are the best. We fundamentally believe that you get what you pay for with consultants. We are worth it.</p>
-          <a href="/contact"><ion-button>Connect With Us</ion-button></a>
+          <th-route-link url="/contact">
+            <ion-button>Connect With Us</ion-button>
+          </th-route-link>
         </div>
       </div>
     ];

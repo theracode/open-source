@@ -14,9 +14,9 @@ export class ThSolutionsPage {
           subText="Theracode makes money by selling Ionic professional services to medium to large companies. Each engagement typically consists of three phases: Architectural oversight and consulting, staff training and workshops, and engineering staff augmentation."
         >
           <div slot="button" class="btn-container">
-            <a href="/contact">
+            <th-route-link url="/contact">
               <ion-button slot="button">Get in touch</ion-button>
-            </a>
+            </th-route-link>
           </div>
 
         </th-header>

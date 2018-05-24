@@ -38,15 +38,15 @@ th-landing-generic-process .btn-container {
   text-align: center;
 }
 
-th-landing-generic-process ion-button .green-btn {
+th-landing-generic-process ion-button .green-btn, th-landing-generic-process ion-button .green-btn:hover {
   background-color: var(--green);
 }
 
-th-landing-generic-process ion-button .red-btn {
+th-landing-generic-process ion-button .red-btn, th-landing-generic-process ion-button .red-btn:hover {
   background-color: var(--red);
 }
 
-th-landing-generic-process ion-button .purple-btn {
+th-landing-generic-process ion-button .purple-btn, th-landing-generic-process ion-button .purple-btn:hover {
   background-color: var(--purple);
 }
 

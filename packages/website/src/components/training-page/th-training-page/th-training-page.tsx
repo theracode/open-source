@@ -14,9 +14,9 @@ export class ThTrainingPage {
           subText="We offer a variety of workshops and staff training options to level up Ionic skils and best practices throughout engineering organizations. We offer both on-site and online options."
         >
           <div slot="button" class="btn-container">
-            <a href="/contact">
+            <th-route-link url="/contact">
               <ion-button slot="button">Get in touch</ion-button>
-            </a>
+            </th-route-link>
           </div>
         </th-header>
 

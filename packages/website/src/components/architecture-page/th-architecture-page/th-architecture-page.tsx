@@ -14,9 +14,9 @@ export class ThArchitecturePage {
           subText="Each member of our team is an accomplished software architect with extensive experience working with or for fortune 500 companies. We're both great with technology and navigating organizational dynamics."
         >
           <div slot="button" class="btn-container">
-            <a href="/contact">
+            <th-route-link url="/contact">
               <ion-button slot="button">Get in touch</ion-button>
-            </a>
+            </th-route-link>
           </div>
         </th-header>
 

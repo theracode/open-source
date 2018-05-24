@@ -14,6 +14,7 @@ export class ThLandingArchitectureProcess {
         titleText="Architecture"
         bodyContent="For Enterprise teams working on their first implementation, or upgrading an existing app, we will serve as a pivotal expert to ensure the project's success. Teams that work with Theracode enjoy faster go-to-market, higher quality applications, and more effective team members."
         buttonClass="green-btn"
+        url="/architecture"
       ></th-landing-generic-process>
     ];
   }

@@ -11,6 +11,7 @@ export class ThLandingGenericProcess {
   @Prop() bodyContent: string;
   @Prop() buttonClass = '';
   @Prop() titleClass = '';
+  @Prop() url = '';
 
   render() {
     return (
@@ -23,7 +24,9 @@ export class ThLandingGenericProcess {
         {this.bodyContent}
         </div>
         <div class="btn-container">
-          <ion-button class={this.buttonClass}>Learn More</ion-button>
+          <th-route-link url={this.url}>
+            <ion-button class={this.buttonClass}>Learn More</ion-button>
+          </th-route-link>
         </div>
       </div>
     );

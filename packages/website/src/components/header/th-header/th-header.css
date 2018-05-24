@@ -4,6 +4,7 @@ th-header .grid {
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
   height: 700px;
   background-image: var(--background-image-url);
+  background-color: var(--background-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;

@@ -1,6 +1,7 @@
 
 th-architecture-page .grid {
   --background-image-url: url('/assets/images/architecture-splash.jpg');
+  --background-color: #414F62;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

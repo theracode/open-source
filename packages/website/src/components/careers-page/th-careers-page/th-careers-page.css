@@ -1,6 +1,7 @@
 
 th-careers-page .grid {
   --background-image-url: url('/assets/images/careers-splash.jpg');
+  --background-color: #3F4354;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

@@ -14,9 +14,9 @@ export class ThEngineeringPage {
           subText="Our staff of exclusively senior engineers are all hand-chosen for their Ionic contributions and experiences. We have the highest concentration of Ionic talent on our staff, and it shows."
         >
           <div slot="button" class="btn-container">
-            <a href="/contact">
+            <th-route-link url="/contact">
               <ion-button slot="button">Get in touch</ion-button>
-            </a>
+            </th-route-link>
           </div>
         </th-header>
 

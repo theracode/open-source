@@ -899,6 +899,7 @@ declare global {
       'imagePath': string;
       'titleClass': string;
       'titleText': string;
+      'url': string;
     }
   }
 
@@ -926,6 +927,7 @@ declare global {
       'imagePath'?: string;
       'titleClass'?: string;
       'titleText'?: string;
+      'url'?: string;
     }
   }
 }

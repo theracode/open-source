@@ -10,12 +10,12 @@ export class ThNav {
   render() {
     return [
       <div class="container" main>
-        <a href="/">
+        <th-route-link url="/">
           <div class="logo">
             <img src="/assets/images/logo.png"></img>
             <h1 class="title">Theracode</h1>
           </div>
-        </a>
+        </th-route-link>
         <nav>
           <th-route-link url="/about">About</th-route-link>
           <a href="https://medium.com/@codetherapy">Blog</a>

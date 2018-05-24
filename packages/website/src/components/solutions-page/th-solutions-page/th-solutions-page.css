@@ -2,6 +2,7 @@
 
 th-solutions-page .grid {
   --background-image-url: url('/assets/images/solutions-splash.jpg');
+  --background-color: #414C55;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

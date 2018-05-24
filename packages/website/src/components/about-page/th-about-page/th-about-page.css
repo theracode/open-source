@@ -1,8 +1,7 @@
 
-
-
 th-about-page .grid {
   --background-image-url: url('/assets/images/about-splash.jpg');
+  --background-color: #41444A;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }

@@ -15,7 +15,9 @@ export class ThSolutionsArchitectureContent {
           <p class="subheader">
           For Enterprise teams working on their first implementation, or upgrading an existing app, we will serve as a pivotal expert to ensure the project's success. Teams that work with Theracode enjoy faster go-to-market, higher quality applications, and more effective team members. We will help implement best practices and patterns for building and deploying Ionic applications at scale.
           </p>
-          <a href="/architecture"><ion-button>Learn More</ion-button></a>
+          <th-route-link url="/architecture">
+            <ion-button>Learn More</ion-button>
+          </th-route-link>
         </div>
         <div class="img">
           <img src="/assets/images/architecture-white.png"/>

@@ -1,6 +1,7 @@
 
 th-contact-page .grid {
   --background-image-url: url('/assets/images/contact-splash.jpg');
+  --background-color: #2E3239;
   display: grid;
   grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 }
