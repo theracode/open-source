@@ -51,21 +51,26 @@
 }
 
 @media all and (max-width: 750px) {
+
+  .th-footer-links-grid {
+    grid-template-columns: 50% 50%;
+  }
+
   .th-footer-links-icon-container {
-    grid-column: 1 / 4;
+    grid-column: 1 / 3;
     justify-content: center;
     margin-bottom: 30px;
   }
 
   .th-footer-links-about-container {
+    grid-column: 1 / 2;
     grid-column: unset;
-    margin-left: 75%;
     display: flex;
     justify-content: center;
   }
 
   .th-footer-links-team-container {
-    margin-left: 75%;
+    grid-column: 2 / 3;
     grid-column: unset;
     display: flex;
     justify-content: center;

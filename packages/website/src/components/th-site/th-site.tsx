@@ -2,13 +2,30 @@ import '@ionic/core';
 import '@theracode/router';
 import 'ionicons';
 
-import { Component } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'th-site',
   styleUrl: 'th-site.css'
 })
 export class ThSite {
+
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+
+  @Listen('window:swUpdate')
+  async serviceWorkerUpdate() {
+    const toast = await this.toastCtrl.create({
+      message: 'New content available',
+      showCloseButton: true,
+      closeButtonText: 'Reload',
+
+    });
+    await toast.present();
+
+    toast.onDidDismiss(() => {
+      window.location.reload();
+    });
+  }
 
   render() {
     return  [
