@@ -1,6 +1,6 @@
 {
   "name": "@theracode/router",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Router for Stencil apps that focuses on smooth transitions and eliminating visual tearing",
   "module": "dist/collection/index.js",
   "main": "dist/index.js",
