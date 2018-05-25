@@ -109,7 +109,7 @@ declare global {
 
   namespace StencilComponents {
     interface ThRouterOutlet {
-      'activateComponent': (tagName: string) => Promise<{}>;
+      'transitionView': (enteringTag: string) => Promise<any>;
     }
   }
 

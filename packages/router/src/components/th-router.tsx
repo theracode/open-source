@@ -1,7 +1,6 @@
 import { Component, Element, Listen, Prop } from '@stencil/core';
 import { QueueApi } from '@stencil/core/dist/declarations';
 import { RouteLinkClickEvent } from './interfaces';
-import { RouterState } from './router-state';
 
 @Component({
   tag: 'th-router',
@@ -17,25 +16,28 @@ export class ThRouter {
   }
 
   async activateRoute(newUrl: string, push: boolean) {
-    newUrl = newUrl.endsWith('/') && newUrl.length > 1 ? newUrl.substring(0, newUrl.length - 1) : newUrl;
     const routes = this.element.querySelectorAll('th-route');
-    const outlet = this.element.querySelector('th-router-outlet');
-    const promises: Promise<any>[] = [];
     const routesArray = Array.from(routes);
-
+    
+    const hydrationPromises: Promise<any>[] = [];
+    const outlet = this.element.querySelector('th-router-outlet');
+    hydrationPromises.push(outlet.componentOnReady());
+    for (const route of routesArray) {
+      hydrationPromises.push(route.componentOnReady());
+    }
+    await Promise.all(hydrationPromises);
+    
+    let tagName: string = null;
     for (const route of routesArray) {
       if (route.isMatch(newUrl)) {
-        // it's a new view, huzzah
-        route.setState(RouterState.PENDING);
-        promises.push(outlet.activateComponent(route.component));
+        tagName = route.component;
+        break;
       }
     }
 
-    await Promise.all(promises);
-    for (const route of routesArray) {
-      const state = route.getState() === RouterState.PENDING ? RouterState.ACTIVE : RouterState.INACTIVE;
-      route.setState(state);
-    }
+    if (tagName) {
+      await outlet.transitionView(tagName);
+    } 
 
     if (push) {
       window.history.pushState(null, null, newUrl);
@@ -44,9 +46,9 @@ export class ThRouter {
 
   componentDidLoad() {
     window.onpopstate = (_event: PopStateEvent) => {
-      return this.activateRoute(window.location.pathname, false);
+      return this.activateRoute(trimUrl(window.location.pathname), false);
     };
-    return this.activateRoute(window.location.pathname, false);
+    return this.activateRoute(trimUrl(window.location.pathname), false);
   }
 
   render() {
@@ -55,4 +57,9 @@ export class ThRouter {
       <slot></slot>
     ];
   }
+}
+
+export function trimUrl(url: string) {
+  // this is super hacky but it works for now
+  return url.endsWith('/') && url.length > 1 ? url.substring(0, url.length - 1) : url;
 }

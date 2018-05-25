@@ -1,6 +1,5 @@
 import { Component, Element, Method, Prop } from '@stencil/core';
 import { QueueApi } from '@stencil/core/dist/declarations';
-import { skipTwoFrames } from './util';
 
 @Component({
   tag: 'th-router-outlet',
@@ -10,76 +9,71 @@ export class ThRouterOutlet {
 
   @Element() element: HTMLElement;
   @Prop({ context: 'queue'}) queue: QueueApi;
-
-  private currentlyActive: HTMLElement = null;
-  private futureActive: HTMLElement = null;
+  private activeView: HTMLElement;
 
   @Method()
-  async activateComponent(tagName: string) {
-
-
-    if (!this.currentlyActive) {
-      // okay cool, this is the first time the app is loaded, check if it was SSR'd
-      const element = this.element.querySelector(tagName) as HTMLElement;
-      if (element) {
-        // we've got the element, so just return for now I guess
-        this.currentlyActive = element;
-        return new Promise((resolve) => {
-
-          window.scrollTo(0, 0);
-
-          setTimeout(() => {
-            this.queue.write(() => {
-
-              setTimeout(() => {
-                this.queue.write(() => {
-                  element.classList.remove(HIDDEN_COMPONENT);
-                  resolve();
-                });
-              }, 5);
-            });
-          }, 5);
-        });
-      }
+  async transitionView(enteringTag: string): Promise<any> {
+    const futureElement = this.element.querySelector(enteringTag) as HTMLElement;
+    if (futureElement) {
+      // this tag already exists in the outlet, just punt baby
+      this.activeView = futureElement;
+      return;
     }
-
-    this.futureActive = document.createElement(tagName) as HTMLElement;
-    this.futureActive.classList.add(HIDDEN_COMPONENT);
-    this.element.appendChild(this.futureActive);
-    if ((this.futureActive as any).componentOnReady) {
-      await (this.futureActive as any).componentOnReady();
-    }
-
-    await skipTwoFrames(this.queue.read);
-
-    // okay, cool, we've chill out for a hot minute, we've read some frames
-    // and measured ourselves up good and nice
-
-    await this.showTopView();
+    
+    this.activeView = await transitionView(enteringTag, this.element, this.activeView);
   }
-
-  private showTopView() {
-    return new Promise((resolve) => {
-      this.queue.write(() => {
-        window.scrollTo(0, 0);
-        if (this.currentlyActive) {
-          this.element.removeChild(this.currentlyActive);
-        }
-        this.futureActive.classList.remove(HIDDEN_COMPONENT);
-        setTimeout(() => {
-          this.currentlyActive = this.futureActive;
-          this.futureActive = null;
-          this.queue.write(resolve);
-        }, 1);
-      });
-    });
-  }
-
+  
   render(): any[] {
     return [];
   }
 }
 
-const HIDDEN_COMPONENT = 'hidden-component';
+async function transitionView(enteringTag: string, parentElement: HTMLElement, activeView: HTMLElement) {
+
+  // okay cool, the first thing we should do is add the element to the dom and hide it
+  const newElement = await addElementToDom(enteringTag, parentElement);
+  // await scrollToTopAndRemoveHideHost(newElement);
+  await doTransition(newElement, activeView);
+  return newElement;
+}
+
+async function addElementToDom(enteringTag: string, parent: HTMLElement) {
+  const element = document.createElement(enteringTag);
+  element.classList.add(HIDE_HOST);
+  parent.appendChild(element);
+  if ((element as any).componentOnReady) {
+    await (element as any).componentOnReady();
+  }
+  if (element.lastChild) {
+    (element.lastChild as HTMLElement).classList.add(HIDE_VIEW);
+  }
+  element.classList.remove(HIDE_HOST);
+  return element;
+}
 
 
+function doTransition(futureView: HTMLElement, currentView: HTMLElement) {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => {
+      scrollTo(0, 0);
+      (futureView.lastChild as HTMLElement).classList.remove(HIDE_VIEW);
+      (futureView.lastChild as HTMLElement).classList.add(SHOW_VIEW);
+      if (currentView) {
+        currentView.classList.add(HIDE_HOST);
+        (currentView.lastChild as HTMLElement).classList.add(HIDE_VIEW);
+      }
+      requestAnimationFrame(() => {
+        // sweet, another frame has passed, so go ahead and clean up
+        if (currentView) {
+          currentView.parentElement.removeChild(currentView);
+        }
+        (futureView.lastChild as HTMLElement).classList.remove(SHOW_VIEW);
+        resolve();
+      });
+    });
+  });
+}
+
+const HIDE_HOST = 'hide-host';
+const HIDE_VIEW = 'hide-view';
+const SHOW_VIEW = 'show-view';
