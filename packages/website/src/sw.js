@@ -1,11 +1,8 @@
-importScripts('workbox-v3.2.0/workbox-sw.js')
+/*importScripts('workbox-v3.2.0/workbox-sw.js')
 
 self.workbox.skipWaiting();
 self.workbox.clientsClaim();
 
-/*
-  This is our code to handle push events.
-*/
 self.addEventListener('push', (event) => {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
@@ -21,3 +18,4 @@ self.addEventListener('push', (event) => {
 });
 
 self.workbox.precaching.precacheAndRoute([]);
+*/
