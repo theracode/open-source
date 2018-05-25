@@ -9,6 +9,7 @@ export class ThRouterOutlet {
 
   @Element() element: HTMLElement;
   @Prop({ context: 'queue'}) queue: QueueApi;
+  @Prop({ context: 'isServer'}) isServer : boolean;
   private activeView: HTMLElement;
 
   @Method()
@@ -20,7 +21,7 @@ export class ThRouterOutlet {
       return;
     }
     
-    this.activeView = await transitionView(enteringTag, this.element, this.activeView);
+    this.activeView = await transitionView(enteringTag, this.element, this.activeView, this.isServer);
   }
   
   render(): any[] {
@@ -28,12 +29,11 @@ export class ThRouterOutlet {
   }
 }
 
-async function transitionView(enteringTag: string, parentElement: HTMLElement, activeView: HTMLElement) {
+async function transitionView(enteringTag: string, parentElement: HTMLElement, activeView: HTMLElement, isServer: boolean) {
 
   // okay cool, the first thing we should do is add the element to the dom and hide it
   const newElement = await addElementToDom(enteringTag, parentElement);
-  // await scrollToTopAndRemoveHideHost(newElement);
-  await doTransition(newElement, activeView);
+  await doTransition(newElement, activeView, isServer);
   return newElement;
 }
 
@@ -52,12 +52,17 @@ async function addElementToDom(enteringTag: string, parent: HTMLElement) {
 }
 
 
-function doTransition(futureView: HTMLElement, currentView: HTMLElement) {
+function doTransition(futureView: HTMLElement, currentView: HTMLElement, isServer: boolean) {
   return new Promise((resolve) => {
     requestAnimationFrame(() => {
-      scrollTo(0, 0);
-      (futureView.lastChild as HTMLElement).classList.remove(HIDE_VIEW);
-      (futureView.lastChild as HTMLElement).classList.add(SHOW_VIEW);
+      if (!isServer) {
+        scrollTo(0, 0);
+      }
+      if (futureView.lastChild) {
+        (futureView.lastChild as HTMLElement).classList.remove(HIDE_VIEW);
+        (futureView.lastChild as HTMLElement).classList.add(SHOW_VIEW);
+      }
+      
       if (currentView) {
         currentView.classList.add(HIDE_HOST);
         (currentView.lastChild as HTMLElement).classList.add(HIDE_VIEW);
@@ -67,7 +72,9 @@ function doTransition(futureView: HTMLElement, currentView: HTMLElement) {
         if (currentView) {
           currentView.parentElement.removeChild(currentView);
         }
-        (futureView.lastChild as HTMLElement).classList.remove(SHOW_VIEW);
+        if (futureView.lastChild) {
+          (futureView.lastChild as HTMLElement).classList.remove(SHOW_VIEW);
+        }
         resolve();
       });
     });
