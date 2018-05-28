@@ -53,7 +53,10 @@ export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTML
       if (futureRoute.lastChild.lastChild) {
         (futureRoute.lastChild.lastChild as HTMLElement).classList.remove(SHOW_INTERNAL_VIEW);
       }
-      resolve();
+
+      requestAnimationFrame(() => {
+        resolve();
+      })
     });
   });
 }
