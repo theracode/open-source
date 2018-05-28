@@ -1,5 +1,4 @@
 import { Component, Element, Method, Prop } from '@stencil/core';
-import { RouterState } from './router-state';
 
 @Component({
   tag: 'th-route',
@@ -10,26 +9,34 @@ export class ThRoute {
   @Element() element: HTMLElement;
   @Prop() url = '';
   @Prop() component = '';
-  private state = RouterState.INACTIVE;
+  @Prop({ context: 'isServer'}) isServer : boolean;
+  private activeRoute = false;
 
   @Method()
-  isMatch(newUrl: string) {
-    return newUrl === this.url;
+  isMatch(url: string) {
+    return url === this.url;
   }
 
   @Method()
-  getState() {
-    return this.state;
+  isActive() {
+    return this.activeRoute;
   }
 
   @Method()
-  setState(state: number) {
-    this.state = state;
+  setActive(active: boolean) {
+    this.activeRoute = active;
   }
 
-  render(): any[] {
-    return [];
+  render() {
+    return render(this);
   }
 }
 
-
+export function render(route: ThRoute) {
+  
+  if (route.isMatch(location.pathname) && route.isServer) {
+    // if it's SSR or pre-render, just return the component
+    route.setActive(true);
+    return <route.component></route.component>
+  }
+}

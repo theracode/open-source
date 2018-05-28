@@ -29,9 +29,6 @@ import {
 import {
   RouteLinkClickEventDetail,
 } from './components/interfaces';
-import {
-  RouterState,
-} from './components/router-state';
 
 declare global {
 
@@ -72,9 +69,9 @@ declare global {
   namespace StencilComponents {
     interface ThRoute {
       'component': string;
-      'getState': () => RouterState;
-      'isMatch': (newUrl: string) => boolean;
-      'setState': (state: number) => void;
+      'isActive': () => boolean;
+      'isMatch': (url: string) => boolean;
+      'setActive': (active: boolean) => void;
       'url': string;
     }
   }
@@ -100,39 +97,6 @@ declare global {
     export interface ThRouteAttributes extends HTMLAttributes {
       'component'?: string;
       'url'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface ThRouterOutlet {
-      'transitionView': (enteringTag: string) => Promise<any>;
-    }
-  }
-
-  interface HTMLThRouterOutletElement extends StencilComponents.ThRouterOutlet, HTMLStencilElement {}
-
-  var HTMLThRouterOutletElement: {
-    prototype: HTMLThRouterOutletElement;
-    new (): HTMLThRouterOutletElement;
-  };
-  interface HTMLElementTagNameMap {
-    'th-router-outlet': HTMLThRouterOutletElement;
-  }
-  interface ElementTagNameMap {
-    'th-router-outlet': HTMLThRouterOutletElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'th-router-outlet': JSXElements.ThRouterOutletAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ThRouterOutletAttributes extends HTMLAttributes {
-
     }
   }
 }

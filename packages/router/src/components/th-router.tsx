@@ -1,6 +1,7 @@
 import { Component, Element, Listen, Prop } from '@stencil/core';
 import { QueueApi } from '@stencil/core/dist/declarations';
 import { RouteLinkClickEvent } from './interfaces';
+import { transitionViews, trimUrl } from './util';
 
 @Component({
   tag: 'th-router',
@@ -9,39 +10,63 @@ export class ThRouter {
 
   @Element() element: HTMLElement;
   @Prop({ context: 'queue'}) queue: QueueApi;
+  @Prop({ context: 'isServer'}) isServer : boolean;
 
   @Listen('body:routeLinkClicked', { passive: true})
   handleLinkClick(event: RouteLinkClickEvent) {
     return this.activateRoute(event.detail.url, true);
   }
 
-  async activateRoute(newUrl: string, push: boolean) {
+  activateRoute(newUrl: string, push: boolean): Promise<any> {
+    if (this.isServer) {
+      return Promise.resolve();
+    }
+
     const routes = this.element.querySelectorAll('th-route');
     const routesArray = Array.from(routes);
     
     const hydrationPromises: Promise<any>[] = [];
-    const outlet = this.element.querySelector('th-router-outlet');
-    hydrationPromises.push(outlet.componentOnReady());
     for (const route of routesArray) {
       hydrationPromises.push(route.componentOnReady());
     }
-    await Promise.all(hydrationPromises);
     
-    let tagName: string = null;
-    for (const route of routesArray) {
-      if (route.isMatch(newUrl)) {
-        tagName = route.component;
-        break;
+    return Promise.all(hydrationPromises).then(() => {
+      let tagName: string = null;
+      let currentlyActiveRoute: HTMLThRouteElement = null;
+      let futureActiveRoute: HTMLThRouteElement = null;
+      for (const route of routesArray) {
+        // find the active route
+        if (route.isActive()) {
+          currentlyActiveRoute = route;
+        }
+
+        if (route.isMatch(newUrl)) {
+          futureActiveRoute = route;
+          tagName = route.component;
+        }
+
+        if (tagName && currentlyActiveRoute && futureActiveRoute) {
+          break;
+        }
       }
-    }
 
-    if (tagName) {
-      await outlet.transitionView(tagName);
-    } 
+      if (currentlyActiveRoute === futureActiveRoute) {
+        // the future view is already active, so just return for now
+        return;
+      }
 
-    if (push) {
-      window.history.pushState(null, null, newUrl);
-    }
+      // okay cool, we have the tagname and the currently active route, so we can do a transition
+      if (!tagName || !futureActiveRoute) {
+        throw new Error(`Could not find a match route for: ${newUrl}`);
+      }
+
+      return transitionViews(tagName, currentlyActiveRoute, futureActiveRoute);
+
+    }).then(() => {
+      if (push) {
+        window.history.pushState(null, null, newUrl);
+      }
+    });
   }
 
   componentDidLoad() {
@@ -53,13 +78,8 @@ export class ThRouter {
 
   render() {
     return [
-      <th-router-outlet></th-router-outlet>,
       <slot></slot>
     ];
   }
 }
 
-export function trimUrl(url: string) {
-  // this is super hacky but it works for now
-  return url.endsWith('/') && url.length > 1 ? url.substring(0, url.length - 1) : url;
-}

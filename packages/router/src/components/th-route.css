@@ -1,0 +1,14 @@
+
+.hide-host {
+  display: none;
+}
+
+.hide-internal {
+  transform: translate3d(-5000px, 0px, 0px);
+  will-change: scroll-position, transform, opacity;
+}
+
+.show-internal {
+  transform: translate3d(0px, 0px, 0px);
+  will-change: scroll-position, transform, opacity;
+}
