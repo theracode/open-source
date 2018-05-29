@@ -1,0 +1,350 @@
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+
+// ---------------------------------------------
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../lib/font/league_gothic-webfont.eot");
+  src: url("../../lib/font/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league_gothic-webfont.woff") format("woff"), url("../../lib/font/league_gothic-webfont.ttf") format("truetype"), url("../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+$ionicBlue: #313744;
+
+html {
+  background-color: $ionicBlue;
+}
+
+// Override theme settings
+$backgroundColor: $ionicBlue;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 52px;
+$mainFont: "Avenir Next", san-serif;
+$headingFont: "Avenir Next", san-serif;
+$headingTextShadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+$headingLetterSpacing: 1px;
+$headingTextTransform: none;
+$headingFontWeight: 400;
+$linkColor: white;
+$linkColorHover: white;
+$selectionBackgroundColor: lighten($linkColor, 25%);
+
+$heading1Size: 2em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1em;
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #222;
+  }
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+
+// ---------------------------------------------
+
+.reveal {
+  font-weight: 200;
+
+  h1, h2, h3, h4 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  p, th, td, ol, ul, li {
+    text-shadow: $headingTextShadow;
+  }
+
+  section img {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 5px;
+    font-style: italic;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  table {
+    td, th {
+      border: 0;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    th {
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .dark-shadow {
+    text-shadow: 5px 0 10px black;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .me {
+    margin: 30px 0 0 130px;
+    font-size: 1.2em;
+    line-height: 2em;
+    list-style-type: none;
+
+    li {
+      padding: 0 0 0 70px;
+
+      // background-size:
+
+    }
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  .native-logos {
+    img {
+      width: 100px;
+      margin: 40px 20px 0 20px;
+    }
+  }
+
+  .stack {
+    width: 330px;
+    margin: 0 350px 0 0;
+    list-style-type: none;
+
+    li {
+      margin: 8px;
+      padding: 5px 6px 7px 12px;
+    }
+  }
+
+  .ionic-blue,
+  .ionic-blue * {
+    text-shadow: none;
+    color: $ionicBlue;
+  }
+
+  .col {
+    float: left;
+    width: 50%;
+  }
+
+  .col.preview {
+    width: 35%;
+  }
+
+  .col.code {
+    width: 65%;
+    text-align: left;
+  }
+
+  .col.code > * {
+    margin-left: 40px;
+  }
+
+  pre code {
+    background-color: #1B2B34;
+  }
+
+  .headshot {
+    border-radius: 50%;
+    border: 5px solid #202532;
+    width: 200px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  a:not(.icon)::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  a:not(.icon):hover::after, a:not(.icon):focus::after {
+    opacity: 0.5;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  .icon {
+    -webkit-transition: all 0.5s ease-out !important;
+    -moz-transition: all 0.5s ease-out !important;
+    -ms-transition: all 0.5s ease-out !important;
+    -o-transition: all 0.5s ease-out !important;
+    transition: all 0.5s ease-out !important;
+    opacity: 0.5;
+  }
+
+  .icon:hover {
+    opacity: 1;
+  }
+
+  .blur {
+    background-color: rgba(0, 0, 0, 0.3);
+
+    p {
+      text-shadow: -2px 2px 0 #000;
+      font-weight: bold;
+    }
+  }
+
+  .demo {
+    width: 40%;
+
+    .demo-buttons {
+      position: absolute;
+      z-index: 124;
+      right: 0;
+      bottom: 0;
+    }
+
+    .button {
+      background-color: white;
+      border: none;
+    }
+  }
+
+  .demo-frame {}
+
+  .code-left {
+    width: 60%;
+    text-align: left;
+  }
+
+  .flex {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  [flex] {
+    display: flex;
+  }
+
+  [col] {
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+  }
+
+  [center] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  [col][center] img {
+    max-height: 420px;
+  }
+
+  pre[col],
+  pre code {
+    background-color: #22272f;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  pre[col] {
+    margin: 0;
+    padding: 30px;
+  }
+
+  [col][demo] {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  iframe{
+    background-color: white;
+  }
+  .demo-ios {
+    position: relative;
+    background: url("../../img/devices-sprite-transparent.png") no-repeat;
+    background-size: 455px 2320px;
+    width: 460px;
+    height: 740px;
+
+    iframe {
+      position: absolute;
+      top: 75px;
+      left: 69px;
+      width: 320px;
+      height: 560px;
+    }
+  }
+
+  .demo-md {
+    position: relative;
+    width: 460px;
+    height: 740px;
+    background: center center no-repeat url("../../img/devices-sprite-transparent.png");
+    background-size: 425px;
+
+    iframe {
+      position: absolute;
+      top: 64px;
+      left: 68px;
+      width: 323px;
+      height: 540px;
+    }
+  }
+
+  .demo-wp {
+    position: relative;
+    width: 460px;
+    height: 740px;
+    background: center bottom no-repeat url("../../img/devices-sprite-transparent.png");
+    background-size: 430px;
+
+    iframe {
+      position: absolute;
+      top: 79px;
+      left: 63px;
+      width: 331px;
+      height: 545px;
+    }
+  }
+}

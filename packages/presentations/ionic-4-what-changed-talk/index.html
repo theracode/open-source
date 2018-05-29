@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--{{{-->
+  <meta charset="utf-8">
+
+  <title>Ionic 4</title>
+
+  <meta name="description" content="A overview of Ionic 2">
+  <meta name="author" content="Dan Bucholtz - forked from Adam Bradley">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/ionic.css" id="theme">
+
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/oceanicnext.css">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Printing and PDF exports -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<!--}}}-->
+
+<body>
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      <!-- intro -->
+      <section>
+        <img src="img/ionic-sdk-landscape-white-1024.png" class="logo" width="550" style="display:block; margin:auto; margin-bottom:100px;">
+        <h1 style="font-size:75px">Ionic 4 Preview</h1>
+        <p>Dan Bucholtz | <a href="https://twitter.com/danbucholtz">@danbucholtz</a></p>
+      </section>
+
+      <section>
+        <p><b>What is Ionic?</b></p>
+        <p>Build cross-platform mobile apps and PWAs using web technologies</p>
+        <p>HTML, JS, CSS</p>
+      </section>
+
+      <section>
+        <p><b>What is Ionic?</b></p>
+        <p>Ionic 2 came out January 25th, 2017</p>
+        <p>Ionic 3 was a minor change - April 5th 2017</p>
+        <P><b>Now it's time for Ionic 4</b></p>
+      </section>
+
+      <section>
+        <p><b>But first</b></p>
+      </section>
+
+      <section>
+        <p><b>Me</b></p>
+        <p>Former lead developer for Ionic</p>
+        <p>#2 contributor across all OSS projects as of March 2018</p>
+      </section>
+
+      <section>
+          <p><b>Me</b></p>
+          <p>Nice guy, husband, two young kids</p>
+          <p>We live in Pewaukee</p>
+          <p>Strive to be an ethical, fair, and pragmatic person that my kids can be proud of</p>
+        </section>
+
+      <section>
+        <p><b>Me</b></p>
+        <p>Engineering Leader for Healthline.com working remotely from Wisconsin</p>
+        <p>Experience as lead engineer and project manager for front-end and back-end projects</p>
+        <p>Starting up a new Ionic consultancy called Theracode</p>
+      </section>
+
+      <section>
+        <p><b>Theracode.io</b></p>
+        <p>Theracode is an Ionic consultancy</p>
+        <p><b>Very happy clients</b></p>
+        <p>We would love to chat with everyone here about how we can help you.</p>
+      </section>
+
+      <section>
+        <img src="img/1.png"></img>
+      </section>
+
+      <section>
+        <p><b>Theracode.io</b></p>
+        <p>We know Ionic better than anyone because we built it</p>
+        <p>Ionic isn't a hobby, it's all we do</p>
+        <p><b>Architecture, Training, SDLC/Process, and Staff Augmentation</b></p>
+      </section>
+
+      <section>
+        <p><b>Now, on to the show</b></p>
+      </section>
+
+      <section>
+        <p><b>Ionic 4</b></p>
+        <p>It's been teased for well-over a year now. It's almost here</p>
+      </section>
+
+      <section>
+        <p><b"I'm not't sure what's coming out first, HL3 or Ionic 4" - one of my clients></b></p>
+        <p>While funny, I'm here to say that Ionic 4 lives up to the hype</p>
+      </section>
+
+      <section>
+          <p><b>A little birdie told me beta release is due in a week or so</b></p>
+        </section>
+
+      <section>
+        <p><b>Ionic 4</b></p>
+        <p>So, what's different?</p>
+      </section>
+
+      <section>
+        <p><b>tl;dr - Lots of good change, minimal bad change for users</b>
+        <p>lots of (private) implementation details changed</p>
+      </section>
+
+      <section>
+          <p><b>For starters</b></p>
+          <p>import { xyz } from 'ionic-angular'</p>
+          <p>&nbsp;</p>
+          <p>import { xyz } from '@ionic/core'</p>
+          <p>import { abc } from '@ionic/angular'</p>
+        </section>
+
+      <section>
+        <p><b>Standards Based</b></p>
+        <p>Each UI control is no longer tightly coupled to Angular</p>
+        <p>Each control is implemented using the custom element browser spec</p>
+      </section>
+
+      <section>
+          <p><b>Custom Elements</b></p>
+          <p>So what does that mean?</p>
+          <p>The big one is directives are no longer first-class citizens in Ionic- <b>menuClose</b> is now <b>&lt;ion-menu-toggle&gt;</b></p>
+      </section>
+
+      <section>
+          <p><b>Custom Elements</b></p>
+          <p>Ionic directives have been updated to either be attributes/properties, or a new DOM element for wrapping</p>
+          <p><b>Trivial upgrade for small apps, can be automated for large apps</b></p>
+      </section>
+
+      <section>
+          <p><b>Custom Elements</b></p>
+          <p>Angular tooling still plays nicely, including the language service</p>
+          <p><b>Ionic ships Angular specific stuff with `@ionic/angular` to make sure the Angular ecosystem plays nicely</b></p>
+      </section>
+
+      <section>
+        <p><b>Standards Based</b></p>
+        <p>Ionic uses CSS variables extensively for styling/theming</p>
+        <p><b>CSS variables are fricking awesome</b></p>
+        <p>Sass is now optional</p>
+      </section>
+
+      <section>
+        <p><b>Standards Based</b></p>
+        <p>Oftentimes, Ionic events had confusing names and were shared between multiple components</p>
+        <p>Not only was naming cleaned up, but Ionic now uses standard DOM events</p>
+      </section>
+
+      <section>
+          <p><b>Bundle Size</b></p>
+          <p>The biggest complaint we heard about Ionic 2/3 was how long it took for apps to boot</p>
+          <p>There is a direct correlation between boot time and the outputted bundle size</p>
+      </section>
+
+      <section>
+        <p><b>Bundle Size</b></p>
+        <p>Ionic tackled this head on and made it a core tenant of Ionic 4</p>
+        <p>It's complicated, but the gist is only components that are in the DOM are loaded</p>
+        <p><b>This made Ionic 4, in it's purest sense, super fast</b></p>
+      </section>
+
+      <section>
+        <p><b>Cue "do it live" explanation of how this works :-D</b></p>
+      </section>
+
+      <section>
+        <p><b>tl;dr - Ionic 4 is really fast and lightweight compared to previous versions</b></p>
+      </section>
+
+      <section>
+          <p><b>Developer Experience</b></p>
+          <p>Finally, a complete SDLC story</p>
+      </section>
+
+      <section>
+          <p>Ionic 4 CLI uses Angular CLI under the hood</p>
+          <p><b>This means it's super fast</b></p>
+      </section>
+
+      <section>
+          <p><b>But more importantly</b>, first-class testing</p>
+          <p>Unit tests</p>
+          <p>E2E tests</p>
+          <p>Environment support, etc</p>
+      </section>
+  
+      <section>
+        <p>Ionic tooling matches the hight and tight Angular developer experience</p>
+      </section>
+
+      <section>
+        <p><b>Dependency Injection</b></p>
+        <p>Ionic internally doesn't use DI anymore</p>
+        <p><b>Ionic still works with DI for your apps</b></p>
+        <p>Some changes in the provider APIs, since providers are loaded asynchronously now</p>
+      </section>
+
+      <section>
+          <p><b>I'm sure I'm forgetting some stuff, so let's do an AMA</b></p>
+      </section>
+
+      <section>
+        <p><b>Thanks for attending</b></p>
+        <p>We'll get into a regularly cadence of doing these - lots of topics to discuss</p>
+      </section>
+
+
+    </div>
+
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      maxScale: 1,
+      minScale: 1,
+
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+      // Optional reveal.js plugins
+      dependencies: [{
+        src: 'lib/js/classList.js',
+        condition: function() {
+          return !document.body.classList;
+        }
+      }, {
+        src: 'plugin/markdown/marked.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/markdown/markdown.js',
+        condition: function() {
+          return !!document.querySelector('[data-markdown]');
+        }
+      }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        condition: function() {
+          return !!document.querySelector('pre code');
+        },
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }, {
+        src: 'plugin/zoom-js/zoom.js',
+        async: true
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true
+      }]
+    });
+  </script>
+
+  <script>
+    function togglePlatform(target, version, platform) {
+      console.log(target, version, platform)
+      var demoTarget = $('#' + target + ' > div');
+      var demoFrame = $('#' + target + ' > div > iframe');
+      var currentSrc = demoFrame.attr('src');
+      var newSrc = currentSrc.split('?')[0] + '?ionicplatform=';
+      var currentPlatform = getPlatform(currentSrc);
+      demoFrame.attr('src', newSrc + platform);
+      console.log(demoTarget)
+      demoTarget.attr('class', version);
+      // demoTarget.addClass(version);
+    }
+
+    function getPlatform(iframeSrc) {
+      // return: 'ios' or android
+      if (iframeSrc.indexOf('android') > -1) {
+        return 'android';
+      }
+      return 'ios';
+    }
+  </script>
+</body>
+
+</html>
