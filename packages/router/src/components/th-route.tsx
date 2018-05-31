@@ -52,7 +52,6 @@ export function render(route: ThRoute) {
     const componentProps = {
       location: route.location,
       match,
-      isActive: route.isActive,
       isServer: route.isServer,
       ...match.params, // Spread the match params into the component properties.
     };

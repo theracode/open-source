@@ -1,6 +1,6 @@
 import { Component, Element, Listen, Prop } from '@stencil/core';
 import { QueueApi } from '@stencil/core/dist/declarations';
-import { MatchResults, RouteLinkClickEvent } from './interfaces';
+import { MatchResults, RouteLinkClickEvent, TransitionOptions } from './interfaces';
 import { transitionViews, trimUrl } from './utils';
 
 @Component({
@@ -34,38 +34,47 @@ export class ThRouter {
     return Promise.all(hydrationPromises).then(() => {
       let tagName: string = null;
       let match: MatchResults = null;
-      let currentlyActiveRoute: HTMLThRouteElement = null;
-      let futureActiveRoute: HTMLThRouteElement = null;
+      let currentRoute: HTMLThRouteElement = null;
+      let futureRoute: HTMLThRouteElement = null;
 
       for (const route of routesArray) {
         // find the active route
         if (route.isActive()) {
-          currentlyActiveRoute = route;
+          currentRoute = route;
         }
 
         const routeMatch = route.isMatch(newUrl);
         if (routeMatch) {
-          futureActiveRoute = route;
+          futureRoute = route;
           tagName = route.component;
           match = routeMatch;
         }
 
-        if (tagName && currentlyActiveRoute && futureActiveRoute) {
+        if (tagName && currentRoute && futureRoute) {
           break;
         }
       }
 
-      if (currentlyActiveRoute === futureActiveRoute) {
+      if (currentRoute === futureRoute) {
         // the future view is already active, so just return for now
         return;
       }
 
       // okay cool, we have the tagname and the currently active route, so we can do a transition
-      if (!tagName || !futureActiveRoute) {
+      if (!tagName || !futureRoute) {
         throw new Error(`Could not find a match route for: ${newUrl}`);
       }
 
-      return transitionViews(tagName, match, currentlyActiveRoute, futureActiveRoute);
+      const options: TransitionOptions = {
+        tagName,
+        match,
+        currentRoute,
+        futureRoute,
+        isServer: this.isServer,
+        location: this.location,
+      };
+
+      return transitionViews(options);
 
     }).then(() => {
       if (push) {
@@ -91,3 +100,4 @@ export class ThRouter {
     ];
   }
 }
+

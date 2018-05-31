@@ -23,3 +23,12 @@ export interface MatchResults {
     [key: string]: string
   };
 }
+
+export interface TransitionOptions {
+  tagName: string;
+  match: MatchResults;
+  location: Location;
+  isServer: boolean;
+  currentRoute: HTMLThRouteElement;
+  futureRoute: HTMLThRouteElement;
+}
