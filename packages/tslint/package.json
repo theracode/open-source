@@ -1,0 +1,33 @@
+{
+  "name": "@theracode/tslint-rules",
+  "version": "0.0.1",
+  "description": "Our preferred TSLint set-up",
+  "main": "tslint.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theracode/open-source.git"
+  },
+  "keywords": [
+    "tslint",
+    "rules",
+    "ionic",
+    "angular",
+    "typescript",
+    "lint",
+    "linting",
+    "linter",
+    "tslint-plugin"
+  ],
+  "author": "Ionic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theracode/open-source/issues"
+  },
+  "homepage": "https://github.com/theracode/open-source#readme",
+  "dependencies": {
+    "tslint-eslint-rules": "^4.1.1"
+  },
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}
