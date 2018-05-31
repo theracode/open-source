@@ -1,11 +1,12 @@
+import { MatchResults } from '../interfaces';
 
 export function trimUrl(url: string) {
   // this is super hacky but it works for now
   return url.endsWith('/') && url.length > 1 ? url.substring(0, url.length - 1) : url;
 }
 
-export function transitionViews(tagName: string, currentRoute: HTMLThRouteElement, futureRoute: HTMLThRouteElement) {
-  return addElementToDom(tagName, futureRoute).then((_newElement: HTMLElement) => {
+export function transitionViews(tagName: string, match: MatchResults, currentRoute: HTMLThRouteElement, futureRoute: HTMLThRouteElement) {
+  return addElementToDom(tagName, match, futureRoute).then((_newElement: HTMLElement) => {
     return doTransition(currentRoute, futureRoute);
   }).then(() => {
     if (currentRoute) {
@@ -15,11 +16,16 @@ export function transitionViews(tagName: string, currentRoute: HTMLThRouteElemen
   });
 }
 
-export function addElementToDom(tagName: string, futureRoute: HTMLThRouteElement) {
+export function addElementToDom(tagName: string, match: MatchResults, futureRoute: HTMLThRouteElement) {
   const element = document.createElement(tagName);
   element.classList.add(HIDE_HOST_ELEMENT);
+  element['match'] = match;
+  if (match) {
+    // Spread the match params into the component properties.
+    Object.keys(match.params).forEach((p) => element[p] = match.params[p]);
+  }
   futureRoute.appendChild(element);
-  
+
   const promise = (element as any).componentOnReady ? (element as any).componentOnReady() : Promise.resolve();
   return promise.then(() => {
     if (element.lastChild) {
@@ -43,7 +49,7 @@ export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTML
 
     if (currentRoute && currentRoute.lastChild) {
       (currentRoute.lastChild as HTMLElement).classList.add(HIDE_HOST_ELEMENT);
-      (currentRoute.lastChild as HTMLElement).classList.add(HIDE_INTERNAL_VIEW)
+      (currentRoute.lastChild as HTMLElement).classList.add(HIDE_INTERNAL_VIEW);
     }
     requestAnimationFrame(() => {
       // sweet, another frame has passed, so go ahead and clean up
@@ -56,7 +62,7 @@ export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTML
 
       requestAnimationFrame(() => {
         resolve();
-      })
+      });
     });
   });
 }
