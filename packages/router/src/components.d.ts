@@ -13,9 +13,12 @@ declare global {
   }
   namespace JSXElements {}
 
+  interface HTMLElement {
+    componentOnReady?: () => Promise<this | null>;
+  }
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
-    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -27,6 +30,7 @@ import {
   EventEmitter,
 } from '@stencil/core';
 import {
+  MatchResults,
   RouteLinkClickEventDetail,
 } from './components/interfaces';
 
@@ -69,8 +73,9 @@ declare global {
   namespace StencilComponents {
     interface ThRoute {
       'component': string;
+      'exact': boolean;
       'isActive': () => boolean;
-      'isMatch': (url: string) => boolean;
+      'isMatch': (pathname: string) => MatchResults;
       'setActive': (active: boolean) => void;
       'url': string;
     }
@@ -96,6 +101,7 @@ declare global {
   namespace JSXElements {
     export interface ThRouteAttributes extends HTMLAttributes {
       'component'?: string;
+      'exact'?: boolean;
       'url'?: string;
     }
   }

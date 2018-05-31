@@ -28,7 +28,7 @@ export function addElementToDom(options: TransitionOptions) {
 
   if (options.match) {
     // Spread the component properties into the component.
-    Object.keys(componentProps).forEach((p) => (element[p] = componentProps[p]));
+    Object.keys(componentProps).forEach((p) => ((<any>element)[p] = (<any>componentProps)[p]));
   }
   options.futureRoute.appendChild(element);
 
