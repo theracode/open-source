@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "@ionic/core": "latest",
-    "@stencil/core": "0.9.6",
-    "@theracode/router": "latest",
+    "@stencil/core": "latest",
+    "@theracode/router": "0.0.6",
     "ionicons": "latest"
   },
   "devDependencies": {
