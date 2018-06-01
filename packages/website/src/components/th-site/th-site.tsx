@@ -31,7 +31,7 @@ export class ThSite {
     return  [
       <th-menu></th-menu>,
       <th-router>
-        <th-route url="/" component="th-landing-page"></th-route>
+        <th-route url="/" exact={true} component="th-landing-page"></th-route>
 
         <th-route url="/about" component="th-about-page"></th-route>
 
