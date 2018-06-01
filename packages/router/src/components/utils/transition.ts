@@ -42,7 +42,7 @@ export function addElementToDom(options: TransitionOptions) {
   });
 }
 
-export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTMLThRouterElement) {
+export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTMLThRouteElement) {
   return new Promise((resolve) => {
     scrollTo(0, 0);
 

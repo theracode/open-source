@@ -1,4 +1,4 @@
-import { Component, Element, Listen, Prop } from '@stencil/core';
+import { Component, Element, Listen, Method, Prop } from '@stencil/core';
 import { QueueApi } from '@stencil/core/dist/declarations';
 import { MatchResults, RouteLinkClickEvent, TransitionOptions } from './interfaces';
 import { transitionViews, trimUrl } from './utils';
@@ -18,6 +18,7 @@ export class ThRouter {
     return this.activateRoute(event.detail.url, true);
   }
 
+  @Method()
   activateRoute(newUrl: string, push: boolean): Promise<any> {
     if (this.isServer) {
       return Promise.resolve();

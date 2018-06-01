@@ -32,6 +32,7 @@ import {
 import {
   MatchResults,
   RouteLinkClickEventDetail,
+  TransitionOptions,
 } from './components/interfaces';
 
 declare global {
@@ -112,7 +113,7 @@ declare global {
 
   namespace StencilComponents {
     interface ThRouter {
-
+      'activateRoute': (newUrl: string, push: boolean) => Promise<any>;
     }
   }
 
