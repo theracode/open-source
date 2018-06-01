@@ -760,6 +760,72 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface ThCulturePopover {
+
+    }
+  }
+
+  interface HTMLThCulturePopoverElement extends StencilComponents.ThCulturePopover, HTMLStencilElement {}
+
+  var HTMLThCulturePopoverElement: {
+    prototype: HTMLThCulturePopoverElement;
+    new (): HTMLThCulturePopoverElement;
+  };
+  interface HTMLElementTagNameMap {
+    'th-culture-popover': HTMLThCulturePopoverElement;
+  }
+  interface ElementTagNameMap {
+    'th-culture-popover': HTMLThCulturePopoverElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'th-culture-popover': JSXElements.ThCulturePopoverAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ThCulturePopoverAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ThSolutionPopover {
+
+    }
+  }
+
+  interface HTMLThSolutionPopoverElement extends StencilComponents.ThSolutionPopover, HTMLStencilElement {}
+
+  var HTMLThSolutionPopoverElement: {
+    prototype: HTMLThSolutionPopoverElement;
+    new (): HTMLThSolutionPopoverElement;
+  };
+  interface HTMLElementTagNameMap {
+    'th-solution-popover': HTMLThSolutionPopoverElement;
+  }
+  interface ElementTagNameMap {
+    'th-solution-popover': HTMLThSolutionPopoverElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'th-solution-popover': JSXElements.ThSolutionPopoverAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ThSolutionPopoverAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ThHeader {
       'buttonText': string;
       'headerText': string;

@@ -36,11 +36,11 @@ th-nav nav {
   width: 100%;
 }
 
-th-nav a, th-nav th-route-link {
+th-nav a, th-nav th-route-link, th-nav .popover-link {
   text-decoration: none;
 }
 
-th-nav nav a, th-nav nav th-route-link {
+th-nav nav a, th-nav nav th-route-link, th-nav .popover-link {
   font-weight: 600;
   font-size: 16px;
   text-transform: uppercase;
@@ -50,6 +50,10 @@ th-nav nav a, th-nav nav th-route-link {
 
 th-nav nav a:hover, th-nav nav th-route-link:hover {
   text-decoration: underline;
+}
+
+th-nav .popover-link:hover {
+  cursor: pointer;
 }
 
 th-nav .menu-icon {

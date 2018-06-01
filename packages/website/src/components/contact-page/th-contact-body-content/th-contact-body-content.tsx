@@ -12,7 +12,7 @@ export class ThContactBodyContent {
     return [
       <div class="container">
         <h1>Let's chat</h1>
-        <form action="https://formspree.io/dan.bucholtz@gmail.com" method="POST">
+        <form action="https://formspree.io/hi@theracode.io" method="POST">
           <div class="input-group">
             <h2>Name<span class="required">  *</span></h2>
             <input name="name" type="text" placeholder="Your Name" class="form-input" required/>
