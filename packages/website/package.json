@@ -21,7 +21,7 @@
   "dependencies": {
     "@ionic/core": "latest",
     "@stencil/core": "latest",
-    "@theracode/router": "0.0.6",
+    "@theracode/router": "0.0.7",
     "ionicons": "latest"
   },
   "devDependencies": {
