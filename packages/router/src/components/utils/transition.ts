@@ -38,6 +38,7 @@ export function addElementToDom(options: TransitionOptions) {
       (element.lastChild as HTMLElement).classList.add(HIDE_INTERNAL_VIEW);
     }
     element.classList.remove(HIDE_HOST_ELEMENT);
+    options.futureRoute.cssClass && element.classList.add(options.futureRoute.cssClass);
     return element;
   });
 }
@@ -51,11 +52,13 @@ export function doTransition(currentRoute: HTMLThRouteElement, futureRoute: HTML
       const newInternalView = futureRoute.lastChild.lastChild as HTMLElement;
       newInternalView.classList.remove(HIDE_INTERNAL_VIEW);
       newInternalView.classList.add(SHOW_INTERNAL_VIEW);
+      futureRoute.classList.add(futureRoute.cssClass);
     }
 
-    if (currentRoute && currentRoute.lastChild) {
-      (currentRoute.lastChild as HTMLElement).classList.add(HIDE_HOST_ELEMENT);
-      (currentRoute.lastChild as HTMLElement).classList.add(HIDE_INTERNAL_VIEW);
+    if (currentRoute) {
+      currentRoute.classList.remove(currentRoute.cssClass);
+      currentRoute.lastChild && (currentRoute.lastChild as HTMLElement).classList.add(HIDE_HOST_ELEMENT);
+      currentRoute.lastChild && (currentRoute.lastChild as HTMLElement).classList.add(HIDE_INTERNAL_VIEW);
     }
     requestAnimationFrame(() => {
       // sweet, another frame has passed, so go ahead and clean up

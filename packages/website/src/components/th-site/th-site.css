@@ -9,10 +9,6 @@ th-router {
   overflow: hidden;
 }
 
-th-route {
-  display: none; 
-}
-
 th-route .active-route {
   position: relative;
   display: block;
