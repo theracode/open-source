@@ -74,6 +74,7 @@ declare global {
   namespace StencilComponents {
     interface ThRoute {
       'component': string;
+      'cssClass': string;
       'exact': boolean;
       'isActive': () => boolean;
       'isMatch': (pathname: string) => MatchResults;
@@ -102,6 +103,7 @@ declare global {
   namespace JSXElements {
     export interface ThRouteAttributes extends HTMLAttributes {
       'component'?: string;
+      'cssClass'?: string;
       'exact'?: boolean;
       'url'?: string;
     }

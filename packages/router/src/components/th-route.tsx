@@ -11,6 +11,7 @@ export class ThRoute {
   @Element() element: HTMLElement;
   @Prop() url = '';
   @Prop() component = '';
+  @Prop() cssClass = 'active-view';
   @Prop() exact = false;
   @Prop({ context: 'isServer'}) isServer: boolean;
   @Prop({ context: 'location' }) location: Location;
@@ -56,6 +57,6 @@ export function render(route: ThRoute) {
       ...match.params, // Spread the match params into the component properties.
     };
 
-    return <route.component {...componentProps}></route.component>;
+    return <route.component {...componentProps} class={this.cssClass}></route.component>;
   }
 }
