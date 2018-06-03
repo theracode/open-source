@@ -12,3 +12,11 @@
   transform: translate3d(0px, 0px, 0px);
   will-change: scroll-position, transform, opacity;
 }
+
+th-route {
+  display: none;
+}
+
+.active-route {
+  display: inherit;
+}
