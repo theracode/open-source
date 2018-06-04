@@ -25,7 +25,7 @@ export class ThCulturePopover {
       }}>
         <ion-list>
           <ion-item onClick={() => {
-            this.activateRoute('/Careers');
+            this.activateRoute('/careers');
           }}>
             <ion-label>
               Careers
