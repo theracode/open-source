@@ -11,7 +11,7 @@ export class ThArchitecturePage {
       <div class="grid">
         <th-header
           headerText="Exceptional Architects"
-          subText="Each member of our team is an accomplished software architect with extensive experience working with or for fortune 500 companies. We're both great with technology and navigating organizational dynamics."
+          subText="Each member of our team is an accomplished solution architect with extensive experience working with large companies. We're great with technology and navigating organizational dynamics."
         >
           <div slot="button" class="btn-container">
             <th-route-link url="/contact">

@@ -11,7 +11,7 @@ export class ThSolutionsPage {
       <div class="grid">
         <th-header
           headerText="Our Services"
-          subText="Theracode makes money by selling Ionic professional services to medium to large companies. Each engagement typically consists of three phases: Architectural oversight and consulting, staff training and workshops, and engineering staff augmentation."
+          subText="Theracode makes money by selling Ionic professional services to companies. Each engagement typically consists of three phases: Architectural guidance and consulting, staff training and workshops, and engineering staff augmentation."
         >
           <div slot="button" class="btn-container">
             <th-route-link url="/contact">

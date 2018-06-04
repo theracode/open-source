@@ -17,7 +17,7 @@ export class ThCareersOpenPositions {
         </div>
         <div class="get-in-touch">
         <h1 class="title">How to apply</h1>
-          <p>Shoot us an email with a resume and three or four paragraphs about why you think you'd be a good fit for the desired role. We will do our best to get back to you within 7 days of receiving the application.</p>
+          <p>Shoot us an email with a resume and a few paragraphs about why you think you'd be a good fit for the desired role. We will do our best to get back to you within 7 days of receiving the application.</p>
 
           <a href="mailto:hi@theracode.io"><ion-button>hi@theracode.io</ion-button></a>
         </div>

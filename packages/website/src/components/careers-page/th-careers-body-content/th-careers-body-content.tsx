@@ -21,7 +21,7 @@ export class ThCareersBodyContent {
         <div class="what-we-look-for">
           <h1>What we look for</h1>
           <p>We're always on the look out for Ionic architects who are nice, responsible and well-rounded people to join our remote team. Presently we are only considering candidates from the United States of America.</p>
-          <p>Outside of Ionic expertise, we value software architecture experience and top-notch communication skills.</p>
+          <p>Outside of Ionic expertise, we value solution architecture experience and top-notch verbal/written communication skills.</p>
         </div>
 
       </div>
