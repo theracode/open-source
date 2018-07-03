@@ -11,8 +11,3 @@ exports.config = {
   plugins: [
   ]
 };
-
-exports.devServer = {
-  root: 'www',
-  watchGlob: '**/**'
-};
